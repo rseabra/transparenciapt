@@ -1,0 +1,841 @@
+/*  
+Theme Name: Amazing Grace
+Theme URI: http://www.prelovac.com/vladimir/wordpress-themes/amazing-grace
+Description: Amazing Grace is a lightweight, super-optimized WordPress theme packed with features (SEO, Adsense & Widget Ready). Brought to you by <a href="http://www.prelovac.com/vladimir/">Vladimir Prelovac</a>
+Version: 3.0
+Tags: fixed width, widgets, valid CSS, valid XHTML, SEO, SEO friendly, adsense, custom header, three columns, clean, right sidebar, gray, green, brown, photoblogging, widget ready, simple, gravatars
+Author: Vladimir Prelovac
+Author URI: http://www.prelovac.com/vladimir/
+
+The CSS/XHTML is released under GPL:  http://www.opensource.org/licenses/gpl-license.php
+*/
+
+/*************************************
+ +Containers
+ *************************************/
+body
+{
+  background:#f8f8ec url(images/bg.jpg) repeat-x top left;
+  color:#151515;
+  font-family:Verdana, Georgia, "Times New Roman", Times, serif;
+  font-size:72.5%;
+  line-height:1.4;
+  text-align:left;
+  margin:0;
+  padding:0;
+}
+
+#wrap
+{
+  position:relative;
+  padding-top:1em;
+  text-align:left;
+  width:1004px;
+  margin:0 auto;
+}
+
+#header
+{
+  text-align:left;
+  width:1004px;
+  margin-bottom:95px;
+  padding:40px 0 0;
+}
+
+#portrait-bg
+{
+  position:absolute;
+  width:319px;
+  height:221px;
+  right:0;
+  top:0;
+}
+
+#rss-big
+{
+  position:absolute;
+  background:url(images/rssbig.jpg);
+  width:111px;
+  height:67px;
+  top:126px;
+  left:25px;
+}
+
+#content
+{
+  font-size:1.1em;
+  float:left;
+  padding:0 0 0 1em;
+}
+
+#sidebar-left
+{
+  background:#FCFCFC;
+  border:1px #ccc dashed;
+  font-size:1em;
+  float:left;
+  margin-left:20px;
+  /* width:198px; */
+  width: 20%;
+  padding:.5em .2em 2em 1em;
+}
+
+#sidebar-right
+{
+  font-size:1em;
+  float:left;
+  margin-left:14px;
+  width:153px;
+}
+
+#footer
+{
+  background:url(images/bg-footer.jpg) repeat-x bottom left;
+  color:#e6e6e6;
+  font-size:1em;
+  clear:both;
+  text-align:center;
+  padding:1em;
+}
+/*************************************
+ +Search form
+ *************************************/
+
+/*
+.search-form {
+	font-size:1.2em;
+	background:url(images/search.png) no-repeat;
+	position:relative;
+	width:147px;
+	height:44px;
+	margin-bottom:10px;
+}
+.search-form input{
+	width:125px;
+	margin:14px 0 0 10px;
+	border:0px;
+	background:#f9f9f9;
+  color: #454545;
+}
+*/
+
+/*************************************
+ +Footer
+ *************************************/
+
+#credits
+{
+  margin:55px 0 -10px;
+}
+
+#footer a
+{
+  color:#E6E6E6;
+}
+
+#footer a:hover
+{
+  color:#b2b2b2;
+}
+
+.rss
+{
+  background:url(./images/rss.png) no-repeat;
+  padding-bottom:6px;
+  padding-left:20px;
+}
+
+/*************************************
+ +Hn, a and p
+ *************************************/
+
+
+a
+{
+  color:#7f9a42;
+  text-decoration:none;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+  font-weight:400;
+  letter-spacing:-.1px;
+  margin:0;
+}
+
+#header h1
+{
+  font-size:4em;
+  margin-left:.5em;
+}
+
+#header h1 a
+{
+  color:#424242;
+}
+
+#header p
+{
+  color:#424242;
+  font-size:1.3em;
+  margin-top:-6px;
+  margin-left:250px;
+  text-align:left;
+  font-style:italic;
+}
+
+.entrytitle
+{
+  text-align:left;
+}
+
+.entrytitle h3
+{
+  font-size:1.5em;
+  color:#6F6F6F;
+}
+
+a:hover,.entrytitle h1 a,.entrytitle h2 a
+{
+  color:#000;
+}
+
+.entrytitle h1,.entrytitle h2
+{
+  font-size:2em;
+  text-align:left;
+}
+
+#rss-big a
+{
+  display:block;
+  width:110px;
+  height:64px;
+}
+
+
+
+blockquote
+{
+  display:block;
+  background:#FCFCFC  none repeat scroll 0 0;
+  padding:2px 10px;
+	clear:both;
+	margin-left:0px;
+	margin-right:0px;
+}
+
+pre
+{
+  max-width:580px;
+  font-size:12px;
+  padding:10px;
+  overflow: auto;
+  clear:both;
+}
+
+code
+{
+  font-size:12px;
+  max-width:580px;
+  padding:10px;
+  clear:both;
+  overflow:auto;
+}
+
+
+/*************************************
+ +Entry
+ *************************************/
+.entry
+{
+  margin-bottom:0;
+  text-align:justify;
+}
+
+.entry a:hover
+{
+  background-color:#F0F0E0;
+}
+
+.entry p
+{
+  margin:0;
+  padding:0 0 10px;
+}
+
+.entry h3
+{
+  font-size:1.3em;
+  padding-bottom:.3em;
+}
+  
+.entry h4 {
+	font-size:1.1em;
+	padding-bottom:0.2em;	
+}
+
+.entry img
+{
+  max-width:580px;
+  margin-left:5px;
+  margin-right:5px;
+  border:0;
+}
+
+.entrybody
+{
+  padding-bottom:6px;
+  overflow:auto;
+}
+
+.entrybody a
+{
+  border-bottom:1px dotted #CCC;
+}
+
+.entry code
+{
+  font-size:1.1em;
+  text-align:left;
+  padding:.2em;
+}
+
+.entrymeta
+{
+  padding-top:.5em;
+  color:#b3960e;
+  border-top:1px dotted #ccc;
+  margin-bottom:3em;
+  clear:both;
+}
+
+.postedby
+{
+  background:url(./images/user.png) no-repeat;
+  padding:2px 3px 3px 20px;
+}
+
+.filedto
+{
+  background:url(./images/post.png) no-repeat;
+  padding:2px 3px 3px 20px;
+}
+
+.commentslink
+{
+  background:url(./images/packaged.png) no-repeat;
+  padding:1px 2px 2px 21px;
+}
+
+.btitle
+{  
+  letter-spacing:-.1px;
+  font-size:47px;
+  font-family:georgia, times New Roman;
+  font-style:italic;
+  margin:0 0 0 .5em;
+}
+
+.btitle a
+{
+  color:#333;
+}
+
+
+.postinfo
+{
+  margin-top:3px;
+}
+
+.postinfo img
+{
+  border:2px solid #F8F8EC;
+  margin:0;
+  padding:0;
+}
+
+.entrydate .dateMonth
+{
+  font-size:10px;
+  text-align:center;
+  color:#FFF;
+  margin:0;
+  padding:3px 0 0;
+}
+
+.entrydate .dateDay
+{
+  font-family:Times New Roman,Helvetica,Sans-Serif;
+  font-size:21px;
+  font-weight:700;
+  text-align:center;
+  color:#888;
+  margin:0;
+  padding:3px 0 0;
+}
+
+.entrydate .dateYear
+{
+  font-size:9px;
+  padding:0 0 0 1pt;
+}
+
+.entrydate
+{
+  background:transparent url(images/date.png) repeat scroll 0 0;
+  float:right;
+  height:53px;
+  margin-left:5px;
+  margin-top:5px;
+  width:49px;
+}
+
+.entrytitle_wrap
+{
+  padding-bottom:1.8em;
+}
+
+.avatar
+{
+  
+  color:#FFF;
+  clear:right;
+  float:left;
+  margin:0 15px 0 0;
+  padding: 2px;
+}
+
+img.centered
+{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+img.alignright
+{
+  display:inline;
+  margin:0 0 2px 7px;
+  padding:4px;
+}
+
+img.alignleft
+{
+  display:inline;
+  margin:0 7px 2px 0;
+  padding:4px;
+}
+
+.alignleft
+{
+  float:left;
+}
+
+.aligncenter
+{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.wp-caption
+{
+  border:1px solid #ddd;
+  text-align:center;
+  background-color:#FCFCFC;
+  padding-top:4px;
+  border-radius:3px;
+  margin:10px;
+}
+
+.wp-caption img
+{
+  border:0 none;
+  margin:0;
+  padding:0;
+}
+
+.wp-caption-dd
+{
+  font-size:11px;
+  line-height:17px;
+  margin:0;
+  padding:0 4px 5px;
+}
+
+.socbook,.alignright
+{
+  float:right;
+}
+
+/*************************************
+ +Sidebar
+ *************************************/
+#sidebar ul
+{
+  list-style-type:none;
+  clear:both;
+  margin:0 0 1em;
+  padding:0;
+}
+
+#sidebar ul li,#sidebar ul li a
+{
+  padding-top:.2em;
+  padding-bottom:.2em;
+  padding-right:.2em;
+}
+
+#sidebar ul li:hover,#sidebar ul li a:hover
+{
+  background:#F0F0E0;
+}
+
+#sidebar ul.children
+{
+	margin:0 0 0 10px;
+}
+
+
+#sidebar h2
+{
+  color:#6F6F6F;
+  font-size:1.5em;
+  margin-top:1em;
+}
+
+#sidebar h4
+{
+  color:#151515;
+  font-size:1.5em;  
+}
+
+#sidebar-left #cat
+{
+  width:195px;
+  border:1px solid #CCC;
+}
+
+#sidebar-right #cat
+{
+  width:150px;
+  border:1px solid #CCC;
+}
+
+#sidebar img
+{
+  max-width:140px;
+  border:0;
+}
+
+/*************************************
+ +Menu
+ *************************************/
+#menu
+{
+  position:absolute;
+  width:690px;
+  margin:0;
+  padding:0;
+  height: 31px;
+  overflow: hidden;
+}
+
+#menu ul
+{
+  font-size:1.2em;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#menu li
+{
+  float:left;
+  border-bottom:0;
+}
+
+#menu li a
+{
+  color:#fff;
+  margin-left:.5em;
+  display:block;
+  padding:.6em .6em .3em;
+}
+
+#menu li a:hover
+{
+  background:#e6e2af;
+  color:#424242;
+}
+
+#menu ul li ul
+{
+  display:none;
+}
+
+/*************************************
+ +Menu Categories
+ *************************************/
+#catmenu
+{
+  position:absolute;
+  width:555px;
+  left:138px;
+  top:151px;
+  margin:0;
+  padding:0;
+  height:29px;
+  overflow:hidden;
+}
+
+#catmenu ul
+{
+  font-size:1em;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#catmenu li
+{
+  float:left;
+  border-bottom:0;
+}
+
+#catmenu li a
+{
+  background:#bfbc94;
+  color:#000;
+  margin-left:.5em;
+  display:block;
+  padding:8px 10px 5px;
+}
+
+#catmenu li.current-cat a
+{
+  background:#a7a37e;
+  color:#fff;
+  margin-left:.5em;
+  display:block;
+  padding:8px 10px 5px;
+}
+
+#catmenu li a:hover
+{
+  background:#a7a37e;
+  color:#fff;
+}
+
+#catmenu ul li ul
+{
+  display:none;
+}
+/*************************************
+ +Comments
+ *************************************/
+.commentsblock,contactform
+{
+  font-size:1em;
+  clear:both;
+  padding-top:20px;
+}
+
+.commentsblock textarea,.contactform textarea
+{
+  width:538px;
+}
+
+.commentsblock input,.commentsblock textarea,.contactform input,.contactform textarea
+{
+  border:1px solid #d1d1d1;
+}
+
+.commentauthor
+{
+  display:block;
+  font-size:1.5em;
+}
+
+ol.commentlist
+{
+  color:#505247;
+  font-size:1em;
+  list-style-type:none;
+  margin:1.5em 0 0;
+  padding:0;
+}
+
+ol.commentlist a
+{
+  color:#b3960e;
+}
+
+ol.commentlist a:hover
+{
+  color:#424242;
+}
+
+.commentlist li
+{
+  margin-bottom:.5em;
+  padding:8px;
+  overflow:auto;
+}
+
+.commentlist p
+{
+  text-transform:none;
+  font-size:1em;
+  margin:10px 5px 10px 59px;
+}
+
+.commentlist blockquote p
+{
+  margin:10px 5px;
+}
+
+.commentlist blockquote
+{
+  margin:10px 0 10px 59px;
+}
+
+.commentlist .children
+{
+	padding-left:0px;
+}
+
+#commentform p
+{  
+  margin-left:0px;
+}
+
+.alt
+{
+  background:#e3e7cb;
+}
+
+.comment_headings
+{
+  font-size:1.3em;
+  color:#6C6C6C;
+}
+
+.vcard
+{
+  font-size:1em;
+}
+
+.vcard cite
+{
+  font-weight:700;
+  font-size:16px;
+}
+
+.commentsblock textarea:focus,.contactform textarea:focus,.commentsblock textarea:focus,.commentsblock input:focus,.contactform textarea:focus,.contactform input:focus
+{
+  background:#eee;
+  border:1px solid #a1a1a1;
+}
+/*************************************
+ +Flickr
+ *************************************/
+#flickr {
+	margin:0 1em 0 .5em;
+	padding:0em;
+}
+#flickr img {
+	border:0px;	
+}
+#flickr a {
+	background:#FFF;
+	border: 1px dotted #ccc;
+	float: left;
+	display: inline;
+	margin:0.7em;
+	padding:5px;
+	width: 75px;
+	height: 75px;
+}
+#flickr a:hover{
+	border: 1px dotted #000;
+}
+/*************************************
+ +Misc
+ *************************************/
+
+#ad_block
+{
+  background:#e3e7cb;
+  text-align:center;
+  margin:1em 0;
+  padding:10px 0;
+}
+
+#ad_block_middle
+{
+  background:#e3e7cb;
+  text-align:center;
+  margin:1em 0 0;
+  padding:10px 0;
+}
+
+img.left
+{
+  float:left;
+  margin-right:15px;
+  margin-bottom:10px;
+}
+
+img.right
+{
+  float:right;
+  margin-left:15px;
+  margin-bottom:10px;
+}
+
+/*************************************
+ +Vlado
+ *************************************/
+
+.relpost
+{
+  padding-bottom:2px;
+  border-bottom:1px dotted #ccc;
+  color:#6C6C6C;
+}
+
+.relpost ul
+{
+  list-style-type:none;
+  padding:.01em;
+}
+
+.endate
+{
+  font-size:1.2em;
+  color:#6F6F6F;
+  font-family:Georgia, Verdana, Times;
+}
+
+#ftnav
+{
+  margin:0 0 5px;
+}
+
+
+
+.navigation
+{
+	padding-bottom: 30px;
+}
+
+  
+.sticky {	
+	border: 1px solid #bbb;
+	border-width: 1px 0;
+	background: #FCFCFC;
+	padding: 15px;
+	margin-bottom:25px;
+}
+

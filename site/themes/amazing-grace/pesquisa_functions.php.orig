@@ -1,0 +1,65 @@
+<?php
+
+function mostra_entidades($do_link, $result) {
+	echo '<div class="search_result">';
+	if($result != FALSE) {
+
+		echo "<table class='search_results_table'><tr><th>Entidade</th><th>Montante</th></tr>";
+		$total = 0;
+		$i = 0;
+		foreach ($result as $row) {
+			echo '<tr class="'.((++$i % 2 == 1)?'search_results_odd':'search_results_even').'">';
+			if($do_link == 1)
+				echo '<td><a target="_new" href="http://publicacoes.mj.pt/pt/Pesquisa.asp?sFirma=&dfDistrito=&dfConcelho=&dInicial=&dFinal=&iTipo=0&sCAPTCHA=&pesquisar=Pesquisar&dfConcelhoDesc=&iNIPC='.$row['nif'].'">'.$row['ent'].'</a></td>';
+			else
+				echo '<td>'.$row['ent'].'</td>';
+			$total+=$row['total'];
+			echo '<td class="montante">'.number_format($row['total'],2,",",".").'&nbsp;&euro;</td>';
+			echo '</tr>';
+		}
+		echo '<tr class="total"><td>Despesa total correspondente:</td><td>'.(number_format($total,2,",",".")).'&nbsp;&euro;</td></tr>';
+		echo '</table>';
+	}
+	echo '</div>';
+}
+
+function mostra_ads($setas = 1, $search_val, $result) {
+	echo '<div class="search_result">';
+	if($result != FALSE) {
+
+		echo 'Foram encontrados <strong>'.count($result).'</strong> registos:';
+		if ($setas == 1) {
+			echo "<table class='search_results_table'><tr><th>ID</th><th class='data'><a href='/?search_str=$search_val&sort=2'><img border='0' src='/wp-content/themes/amazing-grace/images/arrow_down.png' title='Mais recentes primeiro'/></a>&nbsp;Data&nbsp;<a href='/?search_str=$search_val&sort=3'><img border='0' src='/wp-content/themes/amazing-grace/images/arrow_up.png' title='Mais antigos primeiro'/></a></th><th>Ent. Adjudicante</th><th>Ent. Adjudicada</th><th>Objecto</th><th><a href='/?search_str=$search_val&sort=0'><img border='0' src='/wp-content/themes/amazing-grace/images/arrow_down.png' title='Ordem decrescente de montantes'/></a>&nbsp;Montante&nbsp;<a href='/?search_str=$search_val&sort=1'><img border='0' src='/wp-content/themes/amazing-grace/images/arrow_up.png' title='Ordem crescente de montantes'/></a></th></tr>";
+		} else {
+			echo "<table class='search_results_table'><tr><th>ID</th><th class='data'>Data</th><th>Ent. Adjudicante</th><th>Ent. Adjudicada</th><th>Objecto</th><th>Montante</th></tr>";
+		}
+		$total = 0;
+		$i = 0;
+		foreach ($result as $row) {
+			echo '<tr class="'.((++$i % 2 == 1)?'search_results_odd':'search_results_even').'">';
+			$td_open = '<td><a target="_new" href="http://www.base.gov.pt/_layouts/ccp/AjusteDirecto/Detail.aspx?idAjusteDirecto='.($row->idad).'">';
+			$td_open_preco = '<td class="preco"><a target="_new" href="http://www.base.gov.pt/_layouts/ccp/AjusteDirecto/Detail.aspx?idAjusteDirecto='.($row->idad).'">';
+			$td_close = '</a></td>';
+	
+			echo '<td class="idad"><a target="_new" href="http://www.base.gov.pt/_layouts/ccp/AjusteDirecto/Detail.aspx?idAjusteDirecto='.$row->idad.'">'.$row->idad.'</a></td>';
+			$data = substr(trim($row->data),0,10);
+			echo "<td class='data'>$data</td>";
+			#echo '<td class="data">'.($row->data).'</td>';
+			#echo '<td><a target="_new" href="http://publicacoes.mj.pt/pt/Pesquisa.asp?sFirma=&dfDistrito=&dfConcelho=&dInicial=&dFinal=&iTipo=0&sCAPTCHA=&pesquisar=Pesquisar&dfConcelhoDesc=&iNIPC='.$row->nif_ent_adjudicante.'">'.$row->ent_adjudicante.'</a></td>';
+			echo '<td>'.$row->ent_adjudicante.'</td>';
+			echo '<td><a target="_new" href="http://publicacoes.mj.pt/pt/Pesquisa.asp?sFirma=&dfDistrito=&dfConcelho=&dInicial=&dFinal=&iTipo=0&sCAPTCHA=&pesquisar=Pesquisar&dfConcelhoDesc=&iNIPC='.$row->nif_ent_adjudicada.'">'.$row->ent_adjudicada.'</a></td>';
+			echo $td_open.$row->objecto.$td_close;
+			echo $td_open_preco.'<span class="'.($row->preco>75000?'acima_do_limite':'dentro_do_limite').'">';
+			$total+=$row['preco'];
+			#printf("%.2f&nbsp;&euro;",$row->preco);
+			echo number_format($row->preco,2,",",".")."&nbsp;&euro;";
+			echo '</span>'.$td_close;
+			echo '</tr>';
+		}
+		echo '<tr class="total"><td colspan="5">Despesa total correspondente:</td><td>'.(number_format($total,2,",",".")).'&nbsp;&euro;</td></tr>';
+		echo '</table>';
+	} else {
+		echo 'Nenhum resultado encontrado.';
+	}
+	echo '</div>';
+}
