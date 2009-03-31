@@ -1,0 +1,5 @@
+Como correr:
+
+1. criar uma bd MySQL (ou outra, mas edita o código)
+2. configura os dados de acesso em ~/.netrc
+3. ./glue.sh
