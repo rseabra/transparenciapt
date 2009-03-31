@@ -1,0 +1,16 @@
+9
+
+dir
+0
+svn://svn.softwarelivre.sapo.pt/transparenciapt/trunk/doc
+svn://svn.softwarelivre.sapo.pt/transparenciapt
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
